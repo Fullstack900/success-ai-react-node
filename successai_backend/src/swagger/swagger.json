@@ -1,0 +1,28 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "REST - Swagger",
+        "description": "REST API with Swagger doc",
+        "version": "1.0"
+    },
+    "tags": [],
+    "schemes": [
+        "http", "https"
+    ],
+    "host": "",
+    "basePath": "/api/",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {},
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+    
+}

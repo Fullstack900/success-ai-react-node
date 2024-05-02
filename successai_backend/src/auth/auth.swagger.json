@@ -1,0 +1,186 @@
+{
+	"tags": {
+		"name": "Auth",
+		"description": "User Authentication api"
+	},
+	"paths": {
+		"/api/auth/register": {
+			"post": {
+				"x-swagger-router-controller": "auth",
+				"operationId": "Register",
+				"tags": [
+					"Auth"
+				],
+				"description": "User Register",
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"email": {
+										"type": "string",
+										"required": true
+									},
+									"password": {
+										"type": "string",
+										"required": true
+									},
+									"name": {
+										"type": "object",
+										"properties": {
+											"first": {
+												"type": "string",
+												"required": true
+											},
+											"last": {
+												"required": true,
+												"type": "string"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		},
+		"/api/auth/login": {
+			"post": {
+				"x-swagger-router-controller": "auth",
+				"operationId": "Login",
+				"tags": [
+					"Auth"
+				],
+				"description": "User Login",
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"email": {
+										"type": "string",
+										"required": true
+									},
+									"password": {
+										"type": "string",
+										"required": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		},
+		"/api/auth/verify": {
+			"post": {
+				"x-swagger-router-controller": "auth",
+				"operationId": "Verify",
+				"tags": [
+					"Auth"
+				],
+				"description": "User Verify",
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"token": {
+										"type": "string",
+										"required": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		},
+		"/api/auth/forgot-password": {
+			"post": {
+				"x-swagger-router-controller": "auth",
+				"operationId": "Register",
+				"tags": [
+					"Auth"
+				],
+				"description": "User Register",
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"email": {
+										"type": "string",
+										"required": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		},
+		"/api/auth/refresh-token": {
+			"post": {
+				"x-swagger-router-controller": "auth",
+				"operationId": "Register",
+				"tags": [
+					"Auth"
+				],
+				"description": "User Register",
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"token": {
+										"type": "string",
+										"required": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		},
+		"/api/auth/logout": {
+			"post": {
+				"x-swagger-router-controller": "auth",
+				"operationId": "Logout",
+				"tags": [
+					"Auth"
+				],
+				"security": [{
+					"bearerAuth": []
+				}],
+				"description": "User Logout",
+				"": [
+				],
+				"responses": {}
+				
+			}
+		}
+	}
+}

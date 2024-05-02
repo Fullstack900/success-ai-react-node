@@ -1,0 +1,84 @@
+{
+    "tags": {
+        "name": "AppSumo",
+        "description": "App Sumo api"
+    },
+    "paths": {
+        "/api/appsumo/notification": {
+            "post": {
+                "x-swagger-router-controller": "appsumo",
+                "operationId": "Notification",
+                "tags": [
+                    "AppSumo"
+                ],
+                "description": "App Sumo Notification",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "action": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "plan_id": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "uuid": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "activation_email": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "invoice_item_uuid": {
+                                        "type": "string",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        },
+        "/api/appsumo/token": {
+            "post": {
+                "x-swagger-router-controller": "appsumo",
+                "operationId": "GetAccessToken",
+                "tags": [
+                    "AppSumo"
+                ],
+                "description": "App Sumo token",
+                "requestBody": {
+                    "description": "",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string",
+                                        "required": true
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "required": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {}
+            }
+        }
+    }
+}

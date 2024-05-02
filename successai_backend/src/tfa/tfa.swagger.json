@@ -1,0 +1,57 @@
+{
+	"tags": {
+		"name": "Two Factor Authentication",
+		"description": "Two Factor Authentication"
+	},
+	"paths": {
+		"/api/tfa/send-code": {
+			"post": {
+				"x-swagger-router-controller": "two_factor_authentication",
+				"operationId": "Verify Email",
+				"tags": [
+					"Two Factor Authentication"
+				],
+				"description": "Send email verification code",
+				"security": [{
+					"bearerAuth": []
+				}],
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"email": {
+										"type": "string",
+										"required": true
+									},
+									"password": {
+										"type": "string",
+										"required": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		},
+		"/api/tfa/verify-code": {
+			"post": {
+				"x-swagger-router-controller": "two_factor_authentication",
+				"operationId": "Verify Email",
+				"tags": [
+					"Two Factor Authentication"
+				],
+				"description": "Send email verification code",
+				"security": [{
+					"bearerAuth": []
+				}],
+				"responses": {}
+			}
+		}
+	}
+}

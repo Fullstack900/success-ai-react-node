@@ -1,0 +1,43 @@
+{
+	"tags": {
+		"name": "DNS Vitals",
+		"description": "DNS Vitals"
+	},
+	"paths": {
+		"/api/dns/vitals": {
+			"post": {
+				"x-swagger-router-controller": "dns_vitals",
+				"operationId": "DNS Vitals",
+				"tags": [
+					"DNS Vitals"
+				],
+				"description": "DNS Vitals",
+				"security": [{
+					"bearerAuth": []
+				}],
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"accounts": {
+										"type": "array",
+										"required": true,
+										"items": {
+											"type": "string"
+										}
+
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"tags": {
+		"name": "Account",
+		"description": "Email Accounts Management api"
+	},
+	"paths": {
+		"/api/accounts/google": {
+			"post": {
+				"x-swagger-router-controller": "email",
+				"operationId": "Create",
+				"tags": [
+					"Account"
+				],
+				"description": "Connect Google Account using OAuth 2.0",
+				"security": [{
+					"bearerAuth": []
+				}],
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"code" : {
+										"type" : "string",
+										"required" : true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		}
+	}
+}

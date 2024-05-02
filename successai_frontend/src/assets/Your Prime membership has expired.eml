@@ -1,0 +1,1087 @@
+Delivered-To: prathameshsujgure33@gmail.com
+Received: by 2002:a05:6358:5116:b0:130:f945:7e62 with SMTP id 22csp1903727rwi;
+        Mon, 7 Aug 2023 21:53:47 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFnD4ufR+MzwTohqpEhR6V4dqfARoLGsRv2i+0Orl1rIe1ZHieKtrWfvXyy2T8mRk/xJXgY
+X-Received: by 2002:a5d:4a52:0:b0:317:67d1:cdf2 with SMTP id v18-20020a5d4a52000000b0031767d1cdf2mr6423496wrs.32.1691470426854;
+        Mon, 07 Aug 2023 21:53:46 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1691470426; cv=none;
+        d=google.com; s=arc-20160816;
+        b=A9w6Dmb+EU4oSqpAeV6X9wFqXj5pu45N9ldcAcAAbdzFkYDlMloHOZz0IAPvlblUtr
+         vert1ooRqGVr1ReMX7qXDQem5j37HfKFmEf+gEbiOQ8g5X8lI86LiRqYQXkKCJPvUIBY
+         hZAjUqrDzM32kf6EMjmCXcJm7CXMuiOGr2x6WyZx+Vt0gLe6adMzt8JCBrclKAto9me9
+         maCbqppZ1KAPjMbxiVc6Pl94dFlqwf5YO2bhbX21kY28ChkXpPBr0a6BVHAbrXWV9b3B
+         HXgy0+GEFlFHc/yujHMmXaZ8iXtOHkH0mDT/B59KHv+sSlzD+rgy6/GxD9V9Xb0cXS2s
+         1TZQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:bounces-to:mime-version:subject:message-id:to:from:date
+         :dkim-signature:dkim-signature;
+        bh=rfKLdFCJi8VcAdgwwPSkQgpBhPQfnJkICLZAaL5H5Ik=;
+        fh=+mCznUVNi1F5XtX5Gq1RMw9j+geEKu6NTrbEGjdlzzI=;
+        b=zFkW+P2TMcTSkLhO90w2kcC1aZhlv4jISf9bZWQYYlQO1gq/S3+r2cBw7iujwB58VW
+         b3puUOMXulzqK4zhY5WqyKIr1l2rgPOi/GnqZVo77O9qH01gG78GsqtiO6CKauRMMWg3
+         bLjYHr5DVKp6Vu/Y03yg6XKT+QKnd2C+24/KHV28gQ32HAgm8PcpMlJ72P/IO04u9ig+
+         K8kK7Tj/6h1gB13aHGN/dte/oxs6MMVPZIoMnm2FDuQ/J8isZ7KUxJkHYQVQGygnCWhh
+         sS3Ta1CrumOU8Sd7Nzp1D1iDOyqVw78SFpOU3bD9WZfiQ0VJuai6EQgSdndUJRaEhOLN
+         dXHw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@amazon.in header.s=vrv25uounjrl47ud6pendp3i72b4h35u header.b=CHRHCXUr;
+       dkim=pass header.i=@amazonses.com header.s=shh3fegwg5fppqsuzphvschd53n6ihuv header.b=r6D1nk3C;
+       spf=pass (google.com: domain of 20230808045346b2a0bc6049b8410a8a4245f53a20p0eu-c1d9ruaesz38li@bounces.amazon.in designates 54.240.1.157 as permitted sender) smtp.mailfrom=20230808045346b2a0bc6049b8410a8a4245f53a20p0eu-C1D9RUAESZ38LI@bounces.amazon.in;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.in
+Return-Path: <20230808045346b2a0bc6049b8410a8a4245f53a20p0eu-C1D9RUAESZ38LI@bounces.amazon.in>
+Received: from a1-157.smtp-out.eu-west-1.amazonses.com (a1-157.smtp-out.eu-west-1.amazonses.com. [54.240.1.157])
+        by mx.google.com with ESMTPS id i7-20020a5d55c7000000b0031752d46de5si4575136wrw.1027.2023.08.07.21.53.46
+        for <prathameshsujgure33@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 07 Aug 2023 21:53:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 20230808045346b2a0bc6049b8410a8a4245f53a20p0eu-c1d9ruaesz38li@bounces.amazon.in designates 54.240.1.157 as permitted sender) client-ip=54.240.1.157;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@amazon.in header.s=vrv25uounjrl47ud6pendp3i72b4h35u header.b=CHRHCXUr;
+       dkim=pass header.i=@amazonses.com header.s=shh3fegwg5fppqsuzphvschd53n6ihuv header.b=r6D1nk3C;
+       spf=pass (google.com: domain of 20230808045346b2a0bc6049b8410a8a4245f53a20p0eu-c1d9ruaesz38li@bounces.amazon.in designates 54.240.1.157 as permitted sender) smtp.mailfrom=20230808045346b2a0bc6049b8410a8a4245f53a20p0eu-C1D9RUAESZ38LI@bounces.amazon.in;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=amazon.in
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=vrv25uounjrl47ud6pendp3i72b4h35u; d=amazon.in; t=1691470426;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	bh=hdGCZGsC0gXZooysqMH7bk4pkq+2taNxZN9W2tjC39Q=;
+	b=CHRHCXUrj++/wTkzISQIbSCp1jg9+Czl4OOtpIxMElOaJ4mDNAqBVphjSKGTAd14
+	l8jQHzbT0xnNMSAqCOjpRpn3BASNoMg1yXRdtrYWWbu0A9ICAs3JVTLSB4L8/JfujIW
+	EJ7kuHPxRYSMco2u/oQmmWGxWqaUOsydcKMhvQr0=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=shh3fegwg5fppqsuzphvschd53n6ihuv; d=amazonses.com; t=1691470426;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:Feedback-ID;
+	bh=hdGCZGsC0gXZooysqMH7bk4pkq+2taNxZN9W2tjC39Q=;
+	b=r6D1nk3CAFNkjzPQ31q543PgBlGxriJEq23cXICUqUQNdALeVDFsepwan/5UleBy
+	TjVIzY1oUfXSPYLXYI3rsHQcsSu/vxHFPC2Bep9wK/Y6kbofu4WkR7IWCzHdnXZG9WB
+	77H0VhC3UEoPpW8pa0HF0K6Vux2br30OYPmHZylg=
+Date: Tue, 8 Aug 2023 04:53:46 +0000
+From: Amazon Prime <prime@amazon.in>
+To: prathameshsujgure33@gmail.com
+Message-ID: <01020189d37e7082-4e264520-5832-47b6-9489-34fe6d4cf283-000000@eu-west-1.amazonses.com>
+Subject: Your Prime membership has expired
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3454081_1044344326.1691470426234"
+X-AMAZON-MAIL-RELAY-TYPE: notification
+Bounces-to: 20230808045346b2a0bc6049b8410a8a4245f53a20p0eu-C1D9RUAESZ38LI@bounces.amazon.in
+X-AMAZON-METADATA: CA=C1D9RUAESZ38LI-CU=A1II5K3HASN3XO
+X-Original-MessageID: <urn.rtn.msg.20230808045346b2a0bc6049b8410a8a4245f53a20p0eu@1691470426236.>
+Feedback-ID: 1.eu-west-1.UIAUrMfbpGrxavqnRE0yoZrAUBI9C7GRNUx/kUDo6B4=:AmazonSES
+X-SES-Outgoing: 2023.08.08-54.240.1.157
+
+------=_Part_3454081_1044344326.1691470426234
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+=====================================================================
+AMAZON.IN
+
+Dear Customer,
+
+Your Prime membership has expired. Renew your membership today to continue enjoying unlimited delivery, shopping and streaming benefits. 
+
+Make every day better with Prime:
+- Unlimited FREE One-Day, Two-Day & Standard Delivery on eligible items, no minimum size required 
+- Unlimited streaming of movies and TV shows with Prime Video
+- Ad-free streaming of millions of songs with Prime Music
+- Free in-game content like power-ups, exclusive collectibles, characters, outfits, themes, in-game currency & more across popular mobile games.
+- 30-minute early access to top Lightning Deals every day
+
+Learn more about all Prime benefits 
+https://www.amazon.in/prime
+
+Save BIG all year long with Prime.
+
+Renew your membership
+https://www.amazon.in/prime
+
+Thank you,
+The Amazon Prime Team
+
+=====================================================================
+A one-year paid Prime membership has been added to your Cart. Complete Checkout to continue enjoying Prime benefits at just 1499.00 per year. You will require an electronic payment method and cannot pay on delivery. By signing up for a Prime membership, you agree to the <a href="https://www.amazon.in/gp/help/customer/display.html/?nodeId=202042460">Amazon Prime Terms & Conditions</a> and <a href="https://www.amazon.in/b?node=16120818031">Terms & Conditions</a>  of age verification.
+
+
+
+This message was sent to: prathameshsujgure33@gmail.com
+------=_Part_3454081_1044344326.1691470426234
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">=20
+   <html>
+   <head> =20
+   <title>Amazon.com: : P. D. Sujgure, Welcome to Amazon Prime</title>
+
+   <style type=3D"text/css">
+   .membershipText span {
+      letter-spacing: normal;
+      font-weight: normal;
+      position: absolute;
+      padding-top: 0.1em;
+   }
+   @media screen and (max-width: 620px) {
+      .greetingText{
+         font-size: 0.9em !important;
+      }
+      .membershipText span {
+         font-size: 11px !important;
+      }
+      .membershipText {
+         font-size: 1.5em !important;
+      }
+   }
+   html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; }
+   body { margin:0; padding:0; }
+   .ReadMsgBody { width: 100%; }
+   .ExternalClass { width: 100%; }
+   .ExternalClass *{line-height:100%; }
+   .amz_link {color:#333333;}
+   .iosLinkPurple a { color:#97005e; text-decoration:none; }
+   .iosLinkMaroon a { color:#98005d; text-decoration:none; }=20
+   .iosLinkGrey a { color:#666666; text-decoration:none; }  =20
+
+   @media screen and (max-width: 620px) {
+   *[class].block {display:block !important;}
+   *[class].hide {display:none !important;}
+   *[class].rel { position:relative !important; }
+   *[class].abs { position:absolute !important; }
+   *[class].show {display: block !important; width: auto !important; overfl=
+ow: visible !important; float: none !important; max-height: inherit !import=
+ant; line-height: inherit !important;}
+
+   /* ALIGNMENT */
+   *[class].aligncenter {text-align:center !important;}
+   *[class].alignleft {text-align:left !important;}
+   *[class].alignright {text-align:right !important;}
+   *[class].valigntop { vertical-align:top !important; }
+   *[class].valigncenter { vertical-align:middle !important; }
+   *[class].centertable {margin:0 auto !important;}
+   *[class].floatleft{ float: left !important; }
+   *[class].floatright{ float: right !important; }=09
+
+   /*** heights & widths ****/
+   *[class].width1 {width:1px !important;}
+   *[class].width2 {width:2px !important;}
+   *[class].width3 {width:3px !important;}
+   *[class].width4 {width:4px !important;}
+   *[class].width5 {width:5px !important;}
+   *[class].width6 {width:6px !important;}
+   *[class].width7 {width:7px !important;}
+   *[class].width8 {width:8px !important;}
+   *[class].width9 {width:9px !important;}
+   *[class].width10 {width:10px !important;}
+   *[class].width11 {width:11px !important;}
+   *[class].width12 {width:12px !important;}
+   *[class].width13 {width:13px !important;}
+   *[class].width14 {width:14px !important;}
+   *[class].width15 {width:15px !important;}
+   *[class].width18 {width:18px !important;}
+   *[class].width19 {width:19px !important;}
+   *[class].width20 {width:20px !important;}
+   *[class].width22 {width:22px !important;}
+   *[class].width25 {width:25px !important;}
+   *[class].width27 {width:27px !important;}
+   *[class].width30 {width:30px !important;}
+   *[class].width35 {width:35px !important;}
+   *[class].width40 {width:40px !important;}
+   *[class].width45 {width:45px !important;}
+   *[class].width50 {width:50px !important;}
+   *[class].width65 {width:65px !important;}
+   *[class].width77 {width:77px !important;}
+   *[class].width85 {width:85px !important;}
+   *[class].width87 {width:87px !important;}
+   *[class].width90 {width:90px !important;}
+   *[class].width94 {width:94px !important;}
+   *[class].width95 {width:95px !important;}
+   *[class].width96 {width:96px !important;}
+   *[class].width100 {width:100px !important;}
+   *[class].width104 {width:104px !important;}
+   *[class].width105 {width:105px !important;}
+   *[class].width110 {width:110px !important;}
+   *[class].width111 {width:111px !important;}
+   *[class].width118 {width:118px !important;}
+   *[class].width125 {width:125px !important;}
+   *[class].width128 {width:128px !important;}
+   *[class].width130 {width:130px !important;}
+   *[class].width131 {width:131px !important;}
+   *[class].width133 {width:133px !important;}
+   *[class].width136 {width:136px !important;}
+   *[class].width138 {width:138px !important;}
+   *[class].width139 {width:139px !important;}
+   *[class].width140 {width:140px !important;}
+   *[class].width142 {width:142px !important;}
+   *[class].width143 {width:143px !important;}
+   *[class].width148 {width:148px !important;}
+   *[class].width150 {width:150px !important;}
+   *[class].width152 {width:152px !important;}
+   *[class].width153 {width:153px !important;}
+   *[class].width155 {width:155px !important;}
+   *[class].width156 {width:156px !important;}
+   *[class].width160 {width:160px !important;}
+   *[class].width165 {width:165px !important;}
+   *[class].width170 {width:170px !important;}
+   *[class].width171 {width:171px !important;}
+   *[class].width180 {width:180px !important;}
+   *[class].width189 {width:189px !important;}
+   *[class].width194 {width:194px !important;}
+   *[class].width208 {width:208px !important;}
+   *[class].width210 {width:210px !important;}
+   *[class].width212 {width:212px !important;}
+   *[class].width214 {width:214px !important;}
+   *[class].width240 {width:240px !important;}
+   *[class].width242 {width:242px !important;}
+   *[class].width246 {width:246px !important;}
+   *[class].width245 {width:245px !important;}
+   *[class].width250 {width:250px !important;}
+   *[class].width256 {width:256px !important;}
+   *[class].width258 {width:258px !important;}
+   *[class].width260 {width:260px !important;}
+   *[class].width264 {width:264px !important;}
+   *[class].width266 {width:266px !important;}
+   *[class].width268 {width:268px !important;}
+   *[class].width276 {width:276px !important;}
+   *[class].width278 {width:278px !important;}
+   *[class].width286 {width:286px !important;}
+   *[class].width296 {width:296px !important;}
+   *[class].width298 {width:298px !important;}
+   *[class].width300 {width:300px !important;}
+   *[class].width305 {width:305px !important;}
+   *[class].width310 {width:310px !important;}
+   *[class].width318 {width:318px !important;}
+   *[class].width320 {width:320px !important;}
+   *[class].width323 {width:323px !important;}
+   *[class].width324 {width:324px !important;}
+   *[class].width330 {width:330px !important;}
+   *[class].width340 {width:340px !important;}
+   *[class].width350 {width:350px !important;}
+
+   *[class].hauto   {height:auto !important;}
+
+   *[class].height1 {height:1px !important;}
+   *[class].height2 {height:2px !important;}
+   *[class].height3 {height:3px !important;}
+   *[class].height4 {height:4px !important;}
+   *[class].height5 {height:5px !important;}
+   *[class].height6 {height:6px !important;}
+   *[class].height7 {height:7px !important;}
+   *[class].height8 {height:8px !important;}
+   *[class].height9 {height:9px !important;}
+   *[class].height10 {height:10px !important;}
+   *[class].height11 {height:11px !important;}
+   *[class].height12 {height:12px !important;}
+   *[class].height13 {height:13px !important;}
+   *[class].height14 {height:14px !important;}
+   *[class].height15 {height:15px !important;}
+   *[class].height18 {height:18px !important;}
+   *[class].height20 {height:20px !important;}
+   *[class].height21 {height:21px !important;}
+   *[class].height24 {height:24px !important;}
+   *[class].height25 {height:25px !important;}
+   *[class].height27 {height:27px !important;}
+   *[class].height30 {height:30px !important;}
+   *[class].height32 {height:32px !important;}
+   *[class].height35 {height:35px !important;}
+   *[class].height40 {height:40px !important;}
+   *[class].height41 {height:41px !important;}
+   *[class].height42 {height:42px !important;}
+   *[class].height45 {height:45px !important;}
+   *[class].height46 {height:46px !important;}
+   *[class].height47 {height:47px !important;}
+   *[class].height50 {height:50px !important;}
+   *[class].height53 {height:53px !important;}
+   *[class].height67 {height:67px !important;}
+   *[class].height76 {height:76px !important;}
+   *[class].height80 {height:80px !important;}
+   *[class].height86 {height:86px !important;}
+   *[class].height130 {height:130px !important;}
+   *[class].height140 {height:140px !important;}
+   *[class].height189 {height:189px !important;}
+   *[class].height203 {height:203px !important;}
+   *[class].height319 {height:319px !important;}
+   *[class].height322 {height:322px !important;}
+   *[class].height330 {height:330px !important;}
+   *[class].height350 {height:350px !important;}
+
+   /*** padding/margin ****/
+   *[class].paddingl0 {padding-left:0px !important;}
+   *[class].paddingl15 {padding-left:15px !important;}
+   *[class].paddingl55 {padding-left:55px !important;}
+
+   *[class].paddingr0 {padding-right:0px !important;}
+   *[class].paddingr15 {padding-right:15px !important;}
+   *[class].paddingr55 {padding-right:55px !important;}
+
+   *[class].paddingb15 {padding-bottom:15px !important;}
+   *[class].paddingl16 {padding-left:16px !important;}
+
+   *[class].margina {margin:auto !important; }
+   *[class].margint6 {margin-top:6px !important;}=09
+   *[class].margint15 {margin-top:15px !important;}
+   *[class].margint30 {margin-top:30px !important;}
+   *[class].marginb9 {margin-bottom:9px !important;}
+   *[class].marginb15 {margin-bottom:15px !important;}
+   *[class].marginb30 {margin-bottom:30px !important;}
+
+   /*** fonts ****/
+   *[class].font11 {font-size:11px !important;}
+   *[class].font12 {font-size:12px !important;}
+   *[class].font13 {font-size:13px !important;}
+   *[class].font14 {font-size:14px !important;}
+   *[class].font15 {font-size:15px !important;}
+   *[class].font16 {font-size:16px !important;}
+   *[class].font18 {font-size:18px !important;}
+   *[class].font19 {font-size:19px !important;}
+   *[class].font25 {font-size:25px !important;}
+   *[class].font32 {font-size:32px !important;}
+
+   *[class].line13 {line-height:13px !important;}
+   *[class].line14 {line-height:14px !important;}
+   *[class].line16 {line-height:16px !important;}
+   *[class].line17 {line-height:17px !important;}
+   *[class].line20 {line-height:20px !important;}
+   *[class].line21 {line-height:21px !important;}
+   *[class].line22 {line-height:22px !important;}
+   *[class].line23 {line-height:23px !important;}
+   *[class].line24 {line-height:24px !important;}
+   *[class].line29 {line-height:29px !important;}
+   *[class].line34 {line-height:34px !important;}
+
+   /*** positioning ***/
+   *[class].tor3_p21 {top:21px !important;}
+   *[class].top0 {top:0px !important;}
+   *[class].tor3_p12 {top:12px !important;}
+   *[class].tor3_p30 {top:30px !important;}
+   *[class].tor3_p32 {top:32px !important;}
+   *[class].tor3_p189 {top:189px !important;}
+
+   *[class].left0 {left:0 !important;}
+   *[class].left15 {left:15 !important;}
+   *[class].left77 {left:77px !important;}
+   *[class].left78 {left:78px !important;}
+   *[class].left138 {left:138px !important;}
+   *[class].left143 {left:143px !important;}
+   *[class].left153 {left:138px !important;}
+   *[class].left156 {left:156px !important;}
+   *[class].left178 {left:178px !important;}
+
+   *[class].cap{ display:  table-caption !important; }
+   *[class].head{ display:table-header-group !important; }
+   *[class].foot{ display:table-footer-group !important; }
+
+   *[class].bggrey {background-color:#cacaca !important;}
+   *[class].bgwhite {background-color:#ffffff !important;}=09
+
+   /*** DIV alignment ***/
+   *[class].columnl {display: table-cell; width: 77px !important;}
+   *[class].columnr {display: table-cell; width: 189px !important;} =20
+   </style>
+
+   </head>
+   <body width=3D"100%" style=3D"padding:0; margin:0;" bgcolor=3D"#ffffff">=
+<img width=3D"1" height=3D"1" src=3D"https://www.amazon.in/gp/r.html?C=3D3O=
+CSZRBGZVH9E&K=3D2VFOSZRZXB1AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049b8410=
+a8a4245f53a20p0eu&R=3D36PLIWZ9X1ZBI&T=3DO&U=3Dhttps%3A%2F%2Fimages-eu.ssl-i=
+mages-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&H=3DSXAPF5CWC3GMOQMVR=
+EORGHYZVPKA&ref_=3Dpe_63900311_811059381_opens" />
+      <!--[if gte mso 9]>
+      <style>
+         .mr15{ margin-right:15px !important;}
+         .ml15{ margin-left:15px !important;}
+         .mlr10{ margin-left:10px; margin-right:10px !important;}
+         .mr5lr5 { margin-left:5px !important; margin-right:5px !important;=
+}
+         .mr20lr20 { margin-left:20px !important; margin-right:20px !import=
+ant;}
+         .cta{ margin-left:60px !important; margin-right:60px !important; m=
+argin-top:10px !important; margin-bottom:10px !important;}
+      </style>
+      <![endif]-->
+      <center>
+         <table cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+            <tr>
+               <td align=3D"center" valign=3D"top" bgcolor=3D"#ffffff">
+              =20
+                  <table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" w=
+idth=3D"540" class=3D"width350">
+                     <tr>
+                        <td width=3D"20" align=3D"center" class=3D"width10"=
+></td>
+                       =20
+                        <!-- EMAIL HTML BODY -->
+                        <td width=3D"500" align=3D"left" valign=3D"top" cla=
+ss=3D"width330">
+                       =20
+                           <!-- preheader -->
+                           <div style=3D"font-family:Arial, Helvetica, sans=
+-serif; font-size:10px; line-height:16px; color:#666666;" class=3D"hide"> <=
+a href=3D"https://www.amazon.in/gp/r.html?C=3D3OCSZRBGZVH9E&K=3D2VFOSZRZXB1=
+AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049b8410a8a4245f53a20p0eu&R=3D11VI8=
+S2UOERTQ&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2Fprime%2Fpipeline%2Fyo=
+ungadult%3Fref%3Dprime-paid-expiry-email-ss%26ref_%3Dpe_63900311_811059381&=
+H=3DUEC4MEACSG1OTMUFRRCAO3ORZ1EA&ref_=3Dpe_63900311_811059381" style=3D"col=
+or:#666666; text-decoration:underline;">Renew Prime with 50% off at =E2=82=
+=B9749/year & continue enjoying your benefits</a></div>
+                           <!-- preheader -->
+                          =20
+                          <!-- TOP STRIPE WIDGET -->
+
+<div id=3D"scoped-content">
+    <style type=3D"text/css" scoped>
+        .fullstripe img {width: 100% !important; height: auto !important;}
+    </style>
+
+    <table cellpadding=3D"0" cellspacing=3D"0" width=3D"500" class=3D"width=
+330">
+           <tr>
+               <td width=3D"500" align=3D"center" class=3D"block width330 f=
+ullstripe">
+                  =20
+               </td>
+           </tr>
+    </table>
+</div>
+                          <!-- TOP STRIPE WIDGET -->                       =
+   =20
+                          =20
+                           <!-- HEADER -->
+                           <table cellspacing=3D"0" cellpadding=3D"0">
+                              <tr>
+                                 <td height=3D"10" style=3D"line-height:10p=
+x;" class=3D"hide"><img src=3D"https://images-na.ssl-images-amazon.com/imag=
+es/G/01/e-mail/img14/shards/img/bfd/sp.gif" height=3D"1" width=3D"1" style=
+=3D"visibility: hidden !important; overflow:hidden; border:0;" /></td>
+                              </tr>
+                           </table>
+                          =20
+                           <table cellspacing=3D"0" cellpadding=3D"0">
+                              <tr>
+                                 <td height=3D"5" style=3D"line-height:5px;=
+" bgcolor=3D"#ff9900" width=3D"500" class=3D"width330 height4"><img src=3D"=
+https://images-na.ssl-images-amazon.com/images/G/01/e-mail/img14/shards/img=
+/bfd/sp.gif" height=3D"1" width=3D"1" style=3D"visibility: hidden !importan=
+t; overflow:hidden; border:0;" /></td>
+                              </tr>
+                           </table>
+                          =20
+                           <!-- logo and nav -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ =20
+   =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table cellspacing=3D"0" cellpadding=3D"0">
+   <tr>
+      <td height=3D"10" style=3D"line-height:10px;" class=3D"height10"><img=
+ src=3D"images/sp.gif" height=3D"1" width=3D"1" style=3D"visibility: hidden=
+ !important; overflow:hidden; border:0;" /></td>
+   </tr>
+</table>
+
+<table cellpadding=3D"0" cellspacing=3D"0" width=3D"500" class=3D"width330"=
+>
+   <tr>
+      <th width=3D"119" align=3D"center" class=3D"block width330">
+         <a href=3D"https://www.amazon.in/gp/r.html?C=3D3OCSZRBGZVH9E&K=3D2=
+VFOSZRZXB1AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049b8410a8a4245f53a20p0eu=
+&R=3D2S031QJYAX62T&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%3Fref_%3Dpe_639003=
+11_811059381&H=3DAHVWXHZAZI5A5HY9VTR3AN9ON4MA&ref_=3Dpe_63900311_811059381"=
+><img src=3D"https://m.media-amazon.com/images/G/31/marketing/prime/AmazonL=
+ogo._CB485933512_.jpg" border=3D"0" vspace=3D"0" alt=3D"Amazon.com" hspace=
+=3D"0"/></a>
+      </th>
+     =20
+      <th width=3D"371" align=3D"right" class=3D"block width330 aligncenter=
+">
+      =09 <table cellspacing=3D"0" cellpadding=3D"0">
+            <tr>
+               <td height=3D"1" style=3D"line-height:1px;" class=3D"height8=
+"><img src=3D"images/sp.gif" height=3D"1" width=3D"1" style=3D"visibility: =
+hidden !important; overflow:hidden; border:0;" /></td>
+            </tr>
+         </table>
+        =20
+         <div style=3D"font-family:Arial, Helvetica, sans-serif; font-size:=
+13px; line-height:18px; color:#333333; font-weight:normal;">
+            <a href=3D"https://www.amazon.in/gp/f.html?C=3D3OCSZRBGZVH9E&K=
+=3D2VFOSZRZXB1AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049b8410a8a4245f53a20=
+p0eu&R=3D1R3UUXW7SIPE1&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2Fyoursto=
+re%2Fhome%2Fref%3Dpe_63900311_811059381_IN_prime_welcome_email_FT_yourstore=
+&H=3D5GKVMSEJRYDOZG1DQIQOOCHM2FQA&ref_=3Dpe_63900311_811059381_IN_prime_wel=
+come_email_FT_yourstore" style=3D"color:#333333; text-decoration:none;">You=
+r Amazon.in
+</a>
+               &nbsp;&nbsp;&nbsp;|&nbsp;
+               <a href=3D"https://www.amazon.in/gp/f.html?C=3D3OCSZRBGZVH9E=
+&K=3D2VFOSZRZXB1AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049b8410a8a4245f53a=
+20p0eu&R=3D3CAZ2ZVQ4ZV4B&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%2Fgoldb=
+ox%2Fref%3Dpe_63900311_811059381_IN_prime_welcome_email_FT_todaysdeals&H=3D=
+J6WYAUMPZKUTSVUPEPNVJNFAAXEA&ref_=3Dpe_63900311_811059381_IN_prime_welcome_=
+email_FT_todaysdeals" style=3D"color:#333333; text-decoration:none;">Today'=
+s Deals</a>
+               &nbsp;&nbsp;&nbsp;|&nbsp;
+               <a href=3D"https://www.amazon.in/gp/f.html?C=3D3OCSZRBGZVH9E=
+&K=3D2VFOSZRZXB1AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049b8410a8a4245f53a=
+20p0eu&R=3D57HXLJSF72A7&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fmshop%2Fref=
+%3Dpe_63900311_811059381_IN__prime_welcome_email_FT_app&H=3DH98AACHUBKIS2DU=
+ZAW0EALB40VGA&ref_=3Dpe_63900311_811059381_IN__prime_welcome_email_FT_app" =
+style=3D"color:#333333; text-decoration:none;">Get the Amazon App</a>
+         </div>
+        =20
+         <table cellspacing=3D"0" cellpadding=3D"0">
+            <tr>
+               <td height=3D"1" style=3D"line-height:1px;"><img src=3D"imag=
+es/sp.gif" height=3D"1" width=3D"1" style=3D"visibility: hidden !important;=
+ overflow:hidden; border:0;" /></td>
+            </tr>
+         </table>
+      </th>
+   =20
+      <td width=3D"10" class=3D"hide"></td>
+   </tr>
+</table>
+
+<table cellspacing=3D"0" cellpadding=3D"0">
+   <tr>
+      <td height=3D"10" style=3D"line-height:10px;" class=3D"height10"><img=
+ src=3D"images/sp.gif" height=3D"1" width=3D"1" style=3D"visibility: hidden=
+ !important; overflow:hidden;border:0;" /></td>
+   </tr>
+</table>
+
+<table cellspacing=3D"0" cellpadding=3D"0">
+   <tr>
+      <td height=3D"1" style=3D"line-height:1px;" bgcolor=3D"#959595" width=
+=3D"500" class=3D"width330"><img src=3D"images/sp.gif" height=3D"1" width=
+=3D"1" style=3D"visibility: hidden !important;overflow:hidden; border:0;" /=
+></td>
+   </tr>
+</table>
+
+<table cellspacing=3D"0" cellpadding=3D"0">
+   <tr>
+      <td height=3D"15" style=3D"line-height:15px;"><img src=3D"images/sp.g=
+if" height=3D"1" width=3D"1" style=3D"visibility: hidden !important; overfl=
+ow:hidden; border:0;" /></td>
+   </tr>
+</table>
+
+                           <!-- logo and nav -->
+                           <!-- HEADER -->
+                          =20
+                          <!-- SUB HEADER WIDGET -->
+
+<div id=3D"scoped-content">
+    <style type=3D"text/css" scoped>
+        .fullstripe img {width: 100% !important; height: auto !important;}
+    </style>
+
+    <table cellpadding=3D"0" cellspacing=3D"0" width=3D"500" class=3D"width=
+330">
+           <tr>
+               <td width=3D"500" align=3D"center" class=3D"block width330 f=
+ullstripe">
+                  =20
+               </td>
+           </tr>
+    </table>
+</div>
+                          <!-- SUB HEADER WIDGET -->
+
+                           <!-- HERO IMAGE -->
+                                 <table cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"500" class=3D"width330">
+      =09=09=09=09=09=09=09    <tr>
+                                      <td width=3D"500" align=3D"center" cl=
+ass=3D"block width330">
+                                         <a href=3D"https://www.amazon.in/g=
+p/r.html?C=3D3OCSZRBGZVH9E&K=3D2VFOSZRZXB1AD&M=3Durn:rtn:msg:20230808045346=
+b2a0bc6049b8410a8a4245f53a20p0eu&R=3D2Q132JRX78CK6&T=3DC&U=3Dhttps%3A%2F%2F=
+www.amazon.in%2Fgp%2Fprime%2Fpipeline%2Fyoungadult%3Fref%3Din-pr-trans-emai=
+l-paid-expiry-hero%26ref_%3Dpe_63900311_811059381&H=3D88JKX9TAHNTRGHSFLUDAZ=
+HF83B0A&ref_=3Dpe_63900311_811059381" style=3D"text-decoration: none;color:=
+ #FF9900"><img src=3D"https://m.media-amazon.com/images/G/31/prime/PYA/2020=
+/April/Renewal._CB650418964_.jpg" border=3D"0" vspace=3D"0" alt=3D"Renew Pr=
+ime with 50% off at =E2=82=B9749/year & continue enjoying your benefits" wi=
+dth=3D"100%" class=3D"hauto" hspace=3D"0"/></a>
+                                      </td>
+      =09=09=09=09=09=09=09    </tr>
+   =09=09=09=09=09=09         </table>
+   =09=09=09=09=09=09<!-- HERO IMAGE -->
+   =09=09=09=09=09=09
+                           <!-- MAIN CONTENT -->
+                           <table cellpadding=3D"0" cellspacing=3D"0">
+                              <tr>
+                                 <td width=3D"7"></td>
+                                 <td width=3D"493" align=3D"left" valign=3D=
+"top" class=3D"width323">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0">
+                                       <tr>
+                                          <td height=3D"24" style=3D"line-h=
+eight:24px;" class=3D"height15"><img src=3D"https://images-na.ssl-images-am=
+azon.com/images/G/01/e-mail/img14/shards/img/bfd/sp.gif" height=3D"1" width=
+=3D"1" style=3D"display:block; border:0;" /></td>
+                                       </tr>
+                                    </table>
+
+                                    <div style=3D"font-family:Arial, Helvet=
+ica, sans-serif; font-size:12px; line-height:16px; color:#333333;" class=3D=
+"font12 line16">=20
+                                                  =20
+
+<div id=3D"savingsWidget">
+    <style>
+        .widgetHeading {
+            font-weight: 800;
+            font-size: 15px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-family: "Amazon Ember";
+        }
+       =20
+        #savingsWidgetCards {
+            display: "flex";
+            flex-direction: "column";
+        }   =20
+       =20
+        .savingsCard {
+            width: 100%;
+            padding: 10px;
+            display: "flex";
+            align-items: "center";
+            justify-content: "space-between";
+            border-radius: 15px;
+            margin-bottom: 5px;
+            background-size: 100% 100%;
+        }
+       =20
+        .savingsDescription {
+            display: "flex";
+            align-items: center;
+        }
+       =20
+        .savingsCardIcon {
+            width: 40px;
+            height: 40px;
+        }
+       =20
+        .savingsFooter {
+            color: #ffffff;
+            font-size: 16px;
+            font-family: "Amazon Ember";
+        }
+       =20
+        .savingsValue {
+            font-size: 22px;
+            font-weight: bold;
+            font-family: "Amazon Ember";
+            display: "flex";
+        }
+        .savingsValuePreffix {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .savingsValueSuffix {
+            font-size: 16px;
+            font-weight: 400;
+            align-self: flex-end;
+        }
+    </style>
+   =20
+   =20
+        <div class=3D"savingsWidgetContainer">
+                <div class=3D"widgetHeading" style=3D"font-weight: 800;font=
+-size: 15px;margin-bottom: 10px;margin-top: 10px;font-family: Amazon Ember;=
+">
+                    Here is your Prime 12-month recap
+                </div>
+            <div id=3D"savingsWidgetCards" style=3D"display: flex;flex-dire=
+ction: column;">
+        <span class=3D"savingsCard" background=3D"red" style=3D"background-=
+image: url(https://m.media-amazon.com/images/G/31/prime/UPDP/Savings_Gradia=
+nt_-_Emailer.png);width: 100%;padding: 10px;display: flex;align-items: cent=
+er;justify-content: space-between;border-radius: 15px;margin-bottom: 5px;ba=
+ckground-size: 100% 100%;">
+            <div class=3D"savingsValue" style=3D"font-size: 22px;font-weigh=
+t: bold;font-family: Amazon Ember;display: flex;">
+                <div class=3D"savingsValuePreffix" style=3D"font-size: 16px=
+;font-weight: 400;">=E2=82=B9&nbsp;</div>
+                <div>8,289</div>
+                <div class=3D"savingsValueSuffix" style=3D"font-size: 16px;=
+font-weight: 400;align-self: flex-end;">&nbsp;</div>
+            </div>
+            <div class=3D"savingsDescription" style=3D"display: flex; align=
+-items: center;">
+                    <span class=3D"savingsFooter" style=3D"color: #ffffff; =
+font-size: 16px; font-family: Amazon Ember;">saved on delivery, deals and m=
+ore</span>
+            </div>
+            <div class=3D"savingsIcon">
+                    <img class=3D"savingsCardIcon" src=3Dhttps://m.media-am=
+azon.com/images/G/31/prime/UPDP/money_back_Medium_90x90.png width=3D"40" he=
+ight=3D"40"/>
+            </div>
+        </span>
+        <span class=3D"savingsCard" background=3D"red" style=3D"background-=
+image: url(https://m.media-amazon.com/images/G/31/prime/UPDP/Video_Gradient=
+.png);width: 100%;padding: 10px;display: flex;align-items: center;justify-c=
+ontent: space-between;border-radius: 15px;margin-bottom: 5px;background-siz=
+e: 100% 100%;">
+            <div class=3D"savingsValue" style=3D"font-size: 22px;font-weigh=
+t: bold;font-family: Amazon Ember;display: flex;">
+                <div class=3D"savingsValuePreffix" style=3D"font-size: 16px=
+;font-weight: 400;">&nbsp;</div>
+                <div>406</div>
+                <div class=3D"savingsValueSuffix" style=3D"font-size: 16px;=
+font-weight: 400;align-self: flex-end;">&nbsp;hrs</div>
+            </div>
+            <div class=3D"savingsDescription" style=3D"display: flex; align=
+-items: center;">
+                    <span class=3D"savingsFooter" style=3D"color: #ffffff; =
+font-size: 16px; font-family: Amazon Ember;">of movies and shows watched</s=
+pan>
+            </div>
+            <div class=3D"savingsIcon">
+                    <img class=3D"savingsCardIcon" src=3Dhttps://m.media-am=
+azon.com/images/G/31/prime/UPDP/video_icon_Medium_90x90.png width=3D"40" he=
+ight=3D"40"/>
+            </div>
+        </span>
+        <span class=3D"savingsCard" background=3D"red" style=3D"background-=
+image: url(https://m.media-amazon.com/images/G/31/prime/UPDP/Items_delivere=
+d_gradient.png);width: 100%;padding: 10px;display: flex;align-items: center=
+;justify-content: space-between;border-radius: 15px;margin-bottom: 5px;back=
+ground-size: 100% 100%;">
+            <div class=3D"savingsValue" style=3D"font-size: 22px;font-weigh=
+t: bold;font-family: Amazon Ember;display: flex;">
+                <div class=3D"savingsValuePreffix" style=3D"font-size: 16px=
+;font-weight: 400;">&nbsp;</div>
+                <div>39</div>
+                <div class=3D"savingsValueSuffix" style=3D"font-size: 16px;=
+font-weight: 400;align-self: flex-end;">&nbsp;items</div>
+            </div>
+            <div class=3D"savingsDescription" style=3D"display: flex; align=
+-items: center;">
+                    <span class=3D"savingsFooter" style=3D"color: #ffffff; =
+font-size: 16px; font-family: Amazon Ember;">delivered free same/next day</=
+span>
+            </div>
+            <div class=3D"savingsIcon">
+                    <img class=3D"savingsCardIcon" src=3Dhttps://m.media-am=
+azon.com/images/G/31/prime/UPDP/delivery_icon_Medium_90x90.png width=3D"40"=
+ height=3D"40"/>
+            </div>
+        </span>
+        <span class=3D"savingsCard" background=3D"red" style=3D"background-=
+image: url(https://m.media-amazon.com/images/G/31/prime/UPDP/Music_Gradient=
+.png);width: 100%;padding: 10px;display: flex;align-items: center;justify-c=
+ontent: space-between;border-radius: 15px;margin-bottom: 5px;background-siz=
+e: 100% 100%;">
+            <div class=3D"savingsValue" style=3D"font-size: 22px;font-weigh=
+t: bold;font-family: Amazon Ember;display: flex;">
+                <div class=3D"savingsValuePreffix" style=3D"font-size: 16px=
+;font-weight: 400;">&nbsp;</div>
+                <div>15,566</div>
+                <div class=3D"savingsValueSuffix" style=3D"font-size: 16px;=
+font-weight: 400;align-self: flex-end;">&nbsp;mins.</div>
+            </div>
+            <div class=3D"savingsDescription" style=3D"display: flex; align=
+-items: center;">
+                    <span class=3D"savingsFooter" style=3D"color: #ffffff; =
+font-size: 16px; font-family: Amazon Ember;">of ad-free songs/podcasts</spa=
+n>
+            </div>
+            <div class=3D"savingsIcon">
+                    <img class=3D"savingsCardIcon" src=3Dhttps://m.media-am=
+azon.com/images/G/31/prime/UPDP/music_icon_Medium_90x90.png width=3D"40" he=
+ight=3D"40"/>
+            </div>
+        </span>
+            </div>
+        </div>
+</div>
+    <br/>
+    Hello P. D. Sujgure,
+    <br><br>
+    Your Prime Membership has expired. As part of Prime Youth Offer, you=E2=
+=80=99re eligible to renew your membership today at
+        <b><strike>=E2=82=B91499.00/ </strike>=E2=82=B9749/year again</b> (=
+&#8377;750 discount as Amazon Pay cashback).
+Renew today & continue enjoying unlimited streaming, shopping & delivery be=
+nefits.
+    <br><br>
+    Make every day better with Prime:
+    <br>
+    <ul>
+    <li><b>Need an item delivered quickly?</b> Shop with unlimited FREE One=
+-Day and Two-Day delivery on eligible items
+    <br>
+    <li><b>Binge-watching on the weekend?</b> Stream the latest & exclusive=
+ movies and TV shows with Prime Video
+    <br>
+    <li><b>Tuning in to your favourite music?</b> Listen to tens of million=
+s of songs and curated playlists, ad-free, with Prime Music. Enjoy the <b><=
+a href=3D"https://www.amazon.in/gp/f.html?C=3D3OCSZRBGZVH9E&K=3D2VFOSZRZXB1=
+AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049b8410a8a4245f53a20p0eu&R=3D22HI7=
+9AJCYHZ6&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fmusic%2Fprime%3Fref%3DDMM_=
+MT_Prime_Expiry%26ref_%3Dpe_63900311_811059381&H=3DVE0UCWQO4TE3GSCFYBEYK3PA=
+VSYA&ref_=3Dpe_63900311_811059381">top 50 songs</a></b>.
+    <br>
+    <li><b>Looking to upgrade your gaming experience?</b> Get FREE in-game =
+content like power-ups, exclusive collectibles, characters, outfits, themes=
+, in-game currency & more across popular mobile games.
+    <br>
+    <li><b>Looking for the best deals?</b> Get exclusive access to deals on=
+ top brands, and 30-minute early access to deals each day
+    <br>
+    <li><b>Searching for your next read?</b> Choose from hundreds of eligib=
+le, popular eBooks, comics and more with Prime Reading
+    <br>
+    <li><b>Kids at home?</b> Save an extra 15% on diaper subscriptions and =
+get Prime exclusive recommendations from Amazon Family
+    <br>
+    <li><b>Love shopping on Amazon?</b> Eligible Prime members earn unlimit=
+ed 5% reward points on all purchases on Amazon.in using the Amazon Pay ICIC=
+I Bank credit card.
+    </ul>
+        Enjoy all these benefits at just =E2=82=B9 749 per year
+
+     =20
+                                    </div>
+                                   =20
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0">
+                                       <tr>
+                                          <td height=3D"11" style=3D"line-h=
+eight:11px;" class=3D"height7"><img src=3D"https://images-na.ssl-images-ama=
+zon.com/images/G/01/e-mail/img14/shards/img/bfd/sp.gif" height=3D"1" width=
+=3D"1" style=3D"display:block; border:0;" /></td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </table>
+                           <!-- MAIN CONTENT -->
+
+                           <!-- x.x SPACER -->
+                           <table cellspacing=3D"0" cellpadding=3D"0">
+                              <tr>
+                                 <td height=3D"13" style=3D"line-height:13p=
+x;"><img src=3D"https://images-na.ssl-images-amazon.com/images/G/01/e-mail/=
+img14/shards/img/bfd/sp.gif" height=3D"1" width=3D"1" style=3D"visibility: =
+hidden !important; overflow:hidden; border:0;" /></td>
+                              </tr>
+                           </table>
+                          =20
+                           <!-- ACTION BUTTON -->
+                           <table cellpadding=3D"0" cellspacing=3D"0">
+                              <tr>
+                                 <td width=3D"20" class=3D"width10"></td>
+                                 <td width=3D"480" align=3D"center" valign=
+=3D"top" class=3D"width310">
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0">
+                                       <tr>
+                                          <td height=3D"12" style=3D"line-h=
+eight:12px;"><img src=3D"https://images-na.ssl-images-amazon.com/images/G/0=
+1/e-mail/img14/shards/img/bfd/sp.gif" height=3D"1" width=3D"1" style=3D"vis=
+ibility: hidden !important; overflow:hidden; border:0;" /></td>
+                                       </tr>
+                                    </table>
+                                   =20
+                                    <!-- button -->
+                                    <table width=3D"300" cellpadding=3D"0" =
+cellspacing=3D"0" bgcolor=3D"#FFFFFF">
+                                       <tr>
+                                          <td align=3D"center" width=3D"300=
+" height=3D"50" bgcolor=3D"#FFC435" style=3D"-webkit-border-radius: 5px; -m=
+oz-border-radius: 5px; border-radius: 5px; color: #303942; display: block; =
+white-space: nowrap;"><a href=3D"https://www.amazon.in/gp/r.html?C=3D3OCSZR=
+BGZVH9E&K=3D2VFOSZRZXB1AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049b8410a8a4=
+245f53a20p0eu&R=3D2YTT2VRUCUYP1&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp%=
+2Fprime%2Fpipeline%2Fyoungadult%3Fref%3Dprime-paid-expiry-button%26ref_%3Dp=
+e_63900311_811059381&H=3DISFVZECG3PJ2ZHBA8VFFXZ7LAAGA&ref_=3Dpe_63900311_81=
+1059381" style=3D"color: #303942; font-size:16px; font-weight: bold; font-f=
+amily: Arial, sans-serif; text-decoration: none; line-height:50px; width:10=
+0%; display:inline-block">&nbsp;&nbsp;Renew Prime at <strike>=E2=82=B91499.=
+00</strike> =E2=82=B9749.00/year&nbsp;&nbsp;</a></td>
+                                       </tr>
+                                    </table>
+                                    <!-- button -->
+                                   =20
+                                 </td>
+                                 <td width=3D"20" class=3D"width10"></td>
+                              </tr>
+                           </table>
+                          =20
+                           <!-- ACTION BUTTON -->
+                          =20
+                           <!-- EXTRA MESSAGE -->
+                           <!-- EXTRA MESSAGE -->
+                          =20
+                          <!-- SUB BODY WIDGET -->
+
+<div id=3D"scoped-content">
+    <style type=3D"text/css" scoped>
+        .fullstripe img {width: 100% !important; height: auto !important;}
+    </style>
+
+    <table cellpadding=3D"0" cellspacing=3D"0" width=3D"500" class=3D"width=
+330">
+           <tr>
+               <td width=3D"500" align=3D"center" class=3D"block width330 f=
+ullstripe">
+                  =20
+<pe-empty-widget></pe-empty-widget>
+
+               </td>
+           </tr>
+    </table>
+</div>
+                          <!-- SUB BODY WIDGET -->
+
+                           <!-- x.x SPACER -->
+                           <table cellspacing=3D"0" cellpadding=3D"0">
+                              <tr>
+                                 <td height=3D"30" style=3D"line-height:30p=
+x;" class=3D"height20"><img src=3D"https://images-na.ssl-images-amazon.com/=
+images/G/01/e-mail/img14/shards/img/bfd/sp.gif" height=3D"1" width=3D"1" st=
+yle=3D"visibility: hidden !important; overflow:hidden; border:0;" /></td>
+                              </tr>
+                           </table>
+                           <table cellspacing=3D"0" cellpadding=3D"0">
+                              <tr>
+                                 <td height=3D"3" style=3D"line-height:3px;=
+" bgcolor=3D"#f5f6f7" width=3D"500" class=3D"width330"><img src=3D"https://=
+images-na.ssl-images-amazon.com/images/G/01/e-mail/img14/shards/img/bfd/sp.=
+gif" height=3D"1" width=3D"1" style=3D"visibility: hidden !important; overf=
+low:hidden; border:0;" /></td>
+                              </tr>
+                           </table>
+                           <table cellspacing=3D"0" cellpadding=3D"0">
+                              <tr>
+                                 <td height=3D"19" style=3D"line-height:19p=
+x;"><img src=3D"https://images-na.ssl-images-amazon.com/images/G/01/e-mail/=
+img14/shards/img/bfd/sp.gif" height=3D"1" width=3D"1" style=3D"visibility: =
+hidden !important; overflow:hidden; border:0;" /></td>
+                              </tr>
+                           </table>
+                          =20
+                         =20
+                           =20
+                          =20
+                           <!-- FOOTER -->
+                           <table cellpadding=3D"0" cellspacing=3D"0">
+                              <tr>
+                                 <td width=3D"10" class=3D"width6"></td>
+                                 <td width=3D"480" align=3D"left" valign=3D=
+"top" class=3D"width318">
+                                    <div style=3D"font-family:Arial, Helvet=
+ica, sans-serif; font-size:10px; line-height:12px; color:#666666; font-weig=
+ht:normal;">
+                                       A one-year paid Prime membership has=
+ been added to your Cart. Complete Checkout to continue enjoying Prime bene=
+fits at just &#8377;&nbsp;1499.00 per year. You will require an electronic =
+payment method and cannot pay on delivery. By signing up for a Prime member=
+ship, you agree to the <a href=3D"https://www.amazon.in/gp/r.html?C=3D3OCSZ=
+RBGZVH9E&K=3D2VFOSZRZXB1AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049b8410a8a=
+4245f53a20p0eu&R=3D2E3B6UPX77JDS&T=3DC&U=3Dhttps%3A%2F%2Fwww.amazon.in%2Fgp=
+%2Fhelp%2Fcustomer%2Fdisplay.html%2F%3FnodeId%3D202042460%26ref_%3Dpe_63900=
+311_811059381&H=3DQNAOA5XUA3JTAOLJBVQMPWMBEEUA&ref_=3Dpe_63900311_811059381=
+">Amazon Prime Terms & Conditions</a> and <a href=3D"https://www.amazon.in/=
+gp/r.html?C=3D3OCSZRBGZVH9E&K=3D2VFOSZRZXB1AD&M=3Durn:rtn:msg:2023080804534=
+6b2a0bc6049b8410a8a4245f53a20p0eu&R=3D1DYOWFI8NRN1H&T=3DC&U=3Dhttps%3A%2F%2=
+Fwww.amazon.in%2Fb%3Fnode%3D16120818031%26ref_%3Dpe_63900311_811059381&H=3D=
+FTMVFTL44AA59NKS93SAKLZFAZIA&ref_=3Dpe_63900311_811059381">Terms & Conditio=
+ns</a>  of age verification.<br/><br/>
+
+
+
+This message was sent to: prathameshsujgure33@gmail.com
+                                       <br>
+                                    </div>
+                                    <table cellspacing=3D"0" cellpadding=3D=
+"0">
+                                       <tr>
+                                          <td height=3D"1" style=3D"line-he=
+ight:1px;" class=3D"height27"><img src=3D"https://images-na.ssl-images-amaz=
+on.com/images/G/01/e-mail/img14/shards/img/bfd/sp.gif" height=3D"1" width=
+=3D"1" style=3D"visibility: hidden !important; overflow:hidden; border:0;" =
+/></td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                                 <td width=3D"10" class=3D"width6"></td>
+                              </tr>
+                           </table>
+                           <table cellspacing=3D"0" cellpadding=3D"0">
+                              <tr>
+                                 <td height=3D"20" style=3D"line-height:20p=
+x;"><img src=3D"https://images-na.ssl-images-amazon.com/images/G/01/e-mail/=
+img14/shards/img/bfd/sp.gif" height=3D"1" width=3D"1" style=3D"visibility: =
+hidden !important; overflow:hidden; border:0;" /></td>
+                              </tr>
+                           </table>
+                           <!-- FOOTER -->
+                        </td>
+                        <!-- EMAIL HTML BODY -->
+                       =20
+                        <td width=3D"20" align=3D"center" class=3D"width10"=
+></td>
+                       =20
+                     </tr>
+                  </table>
+               </td>
+            </tr>
+         </table>
+      </center>
+   <img width=3D"1" height=3D"1" src=3D"https://www.amazon.in/gp/r.html?C=
+=3D3OCSZRBGZVH9E&K=3D2VFOSZRZXB1AD&M=3Durn:rtn:msg:20230808045346b2a0bc6049=
+b8410a8a4245f53a20p0eu&R=3D1D9BL1TVMCW2O&T=3DE&U=3Dhttps%3A%2F%2Fimages-eu.=
+ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&H=3DBORY4DZXMFOA=
+FI2L9CLGSASWZMEA&ref_=3Dpe_63900311_811059381_open" /></body>
+   </html><!--MsgId:PE_C_expired_p_I_with_pya_cashback_messaging_Savings_Wi=
+dget_email_through_turing--><!--TURING:true-->
+------=_Part_3454081_1044344326.1691470426234--

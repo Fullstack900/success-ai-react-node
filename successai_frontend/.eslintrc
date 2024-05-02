@@ -1,0 +1,12 @@
+{
+  "extends": "react-app",
+  "globals": {
+    "growsumo": "readonly",
+    "growsumoInit": "readonly"
+  },
+  "rules": {
+    "jsx-a11y/alt-text": "off",
+    "react/display-name": "off",
+    "react/no-children-prop": "off"
+  }
+}

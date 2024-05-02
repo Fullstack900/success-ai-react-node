@@ -1,0 +1,61 @@
+.MainSection {
+  background: #ffffff;
+  width: calc(100vw - 90vh);
+  margin: 0;
+  height: calc(100vh - 13vh);
+  display: flex;
+  overflow-x: auto;
+  border: 1px solid #f1f9ff;
+
+}
+.MainSectioncol {
+  background: #ffffff;
+  width: calc(100vw - 90vh);
+  display: flex;
+  overflow-x: auto;
+}
+.Maincol{
+  background: #ffffff;
+  width: calc(100vw - 90vh);
+  display: flex;
+}
+.MainSection .Tabs {
+  width: 300px;
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+.MainSection::-webkit-scrollbar {
+  display: none;
+}
+
+.Tabs {
+  background-color: transparent;
+  border: 1px solid #f1f9ff;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+  background-color: #f1f9ff;
+  box-shadow: #414644;
+  max-height: 90vh;
+  overflow-y: scroll;
+}
+
+.Tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.Tabs .TabHeader {
+  background-color: #f1f9ff;
+  padding: 10px;
+}
+.Tabs .TabHeader h4 {
+  color: #414644;
+  margin: 0;
+  padding: 0;
+}
+/* .MuiInputBase-root.MuiFilledInput-root.MuiFilledInput-underline.MuiInputBase-colorPrimary.MuiInputBase-fullWidth.MuiInputBase-formControl.MuiInputBase-adornedEnd.MuiAutocomplete-inputRoot {
+  height: 40px !important
+}
+.MuiAutocomplete-endAdornment{
+  height: 40px !important
+} */

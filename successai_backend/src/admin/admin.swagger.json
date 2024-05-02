@@ -1,0 +1,309 @@
+{
+  "tags": {
+    "name": "Admin",
+    "description": "Admin api"
+  },
+  "paths": {
+    "/api/admin/me": {
+      "get": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Admin Details",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Get Admin Details",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/admin/register": {
+      "post": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Register",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Admin Register",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "password": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "name": {
+                    "type": "object",
+                    "properties": {
+                      "first": {
+                        "type": "string",
+                        "required": true
+                      },
+                      "last": {
+                        "required": true,
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "role": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {}
+      }
+    },
+    "/api/admin/token": {
+      "post": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Token",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Admin Token",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {}
+      }
+    },
+    "/api/admin/login": {
+      "post": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Login",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Admin Login",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "password": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {}
+      }
+    },
+    "/api/admin/verify": {
+      "post": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Verify",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Admin Verify",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "token": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {}
+      }
+    },
+    "/api/admin/logout": {
+      "post": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Logout",
+        "tags": [
+          "Admin"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "description": "Admin Logout",
+        "": [],
+        "responses": {}
+      }
+    },
+    "/api/admin/getAllUsers": {
+      "get": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Get All Users",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Get All users",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/api/admin/app-sumo-register": {
+      "post": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "SumoRegister",
+        "tags": [
+          "Admin"
+        ],
+        "description": "App sumo Register",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "password": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {}
+      }
+    },
+    "/api/admin/disable-user": {
+      "post": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Disable-user",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Disable User",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {}
+      }
+    },
+    "/api/admin/enable-user": {
+      "post": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Enable-user",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Enable User",
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {}
+      }
+    },
+    "/api/admin/deleted-users": {
+      "post": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Deleted users",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Deleted Users",
+        "responses": {}
+      }
+    },
+    "/api/admin/getExportUsers": {
+      "get": {
+        "x-swagger-router-controller": "admin",
+        "operationId": "Get Export Users",
+        "tags": [
+          "Admin"
+        ],
+        "description": "Get Export users",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+	"tags": {
+		"name": "User",
+		"description": "User api"
+	},
+	"paths": {
+		"/api/user/me": {
+			"get": {
+				"x-swagger-router-controller": "user",
+				"operationId": "User Details",
+				"tags": [
+					"User"
+				],
+				"description": "Get User Detaisl",
+				"security": [{
+					"bearerAuth": []
+				}]
+			},
+			"put": {
+				"x-swagger-router-controller": "user",
+				"operationId": "Update User",
+				"tags": [
+					"User"
+				],
+				"description": "Update User Details",
+				"security": [{
+					"bearerAuth": []
+				}],
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "object",
+										"properties": {
+											"first": {
+												"type": "string",
+												"required": true
+											},
+											"last": {
+												"required": true,
+												"type": "string"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		},
+		"/api/user/me/send-email-verify-code": {
+			"post": {
+				"x-swagger-router-controller": "user",
+				"operationId": "Verify Email",
+				"tags": [
+					"User"
+				],
+				"description": "Send email verification code",
+				"security": [{
+					"bearerAuth": []
+				}],
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"email": {
+										"type": "string",
+										"required": true
+									},
+									"tfaToken": {
+										"type": "string",
+										"required": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		},
+		"/api/user/me/email": {
+			"put": {
+				"x-swagger-router-controller": "user",
+				"operationId": "Update Email",
+				"tags": [
+					"User"
+				],
+				"description": "Update Email",
+				"security": [{
+					"bearerAuth": []
+				}],
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"email": {
+										"type": "string",
+										"required": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		},
+		"/api/user/me/password": {
+			"put": {
+				"x-swagger-router-controller": "user",
+				"operationId": "Reset Password",
+				"tags": [
+					"User"
+				],
+				"description": "Reset Password",
+				"security": [{
+					"bearerAuth": []
+				}],
+				"requestBody": {
+					"description": "",
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"password": {
+										"type": "string",
+										"required": true
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {}
+			}
+		}
+	}
+}

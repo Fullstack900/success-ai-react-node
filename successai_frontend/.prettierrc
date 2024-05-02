@@ -1,0 +1,21 @@
+{
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": false,
+    "tabWidth": 2,
+    "useTabs": false,
+    "endofline": "lf",
+    "importOrder": [
+        "^react",
+        "",
+        "^@?\\w",
+        "",
+        "^~/.*(?<!(\\.svg|\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp))$",
+        "",
+        "^(?=.*\\./)(?:(?!\\.css|\\.svg|\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp).)*$",
+        "",
+        "^.*(\\.svg|\\.png|\\.jpg|\\.jpeg|\\.gif|\\.webp)",
+        "",
+        "^(\\./|\\.\\./).*(\\.css)"
+    ]
+}
